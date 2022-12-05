@@ -149,7 +149,8 @@ picture img {
 
 .main-heading {
   font-size: clamp(1.38rem, calc(-0.02rem + 6.96vw), 6.25rem);
-  line-height: 1;
+  /* font-size: clamp(1.38rem, calc(0.34rem + 5.18vw), 5rem); */
+  line-height: 1.2;
   font-weight: 300;
   letter-spacing: 18px;
   text-transform: uppercase;
@@ -174,11 +175,13 @@ picture img {
 }
 
 .confirmation-heading {
-  font-size: clamp(1.38rem, calc(-0.02rem + 6.96vw), 100px);
+  font-size: clamp(1.38rem, calc(-0.02rem + 6.96vw), 6.25rem);
+  line-height: 1;
   font-weight: 300;
   letter-spacing: 18px;
   text-transform: uppercase;
   text-align: center;
+  color: var(--Desaturated-Red);
   padding: 50px 0;
 }
 
