@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap");
+
+/* ************************ */
+/* VARIABLES */
+/* ************************ */
+
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+
+  --Transition: 0.8s all;
+}
+
+/* ************************ */
+/* RESETS */
+/* ************************ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(100%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* ************************ */
+/* LAYOUT */
+/* ************************ */
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content auto;
+  transition: var(--Transition);
+}
+
+.logo {
+  grid-row: 1 / 2;
+}
+
+.main-content {
+  grid-row: 3 / 4;
+  /* grid-row: 2 / -1; */
+}
+
+.main-page {
+  max-width: 60ch;
+}
+
+picture {
+  grid-row: 2 / 3;
+}
+
+/* ************************ */
+/* LOGO */
+/* ************************ */
+
+.logo {
+  max-width: 120px;
+  padding: 10px;
+}
+
+picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ************************ */
+/* HEADING & TEXT */
+/* ************************ */
+
+.main-content {
+  display: grid;
+  place-content: center;
+  padding: 0 20px;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hide {
+  display: none;
+}
+
+.main-heading {
+  font-size: clamp(1.38rem, calc(-0.02rem + 6.96vw), 6.25rem);
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--Desaturated-Red);
+  padding: 20px 0;
+}
+
+.main-heading span {
+  font-weight: 500;
+  color: #333;
+}
+
+.main-paragraph {
+  font-size: clamp(0.88rem, calc(0.8rem + 0.36vw), 1.25rem);
+  line-height: 1.7;
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--Desaturated-Red);
+  font-weight: 400;
+  transition: 0.8s ease;
+}
+
+.confirmation-heading {
+  font-size: clamp(1.38rem, calc(-0.02rem + 6.96vw), 100px);
+  font-weight: 300;
+  letter-spacing: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.confirmation-heading span {
+  font-weight: 500;
+  color: #333;
+}
+
+.confirmation-paragraph {
+  font-size: clamp(0.88rem, calc(0.8rem + 0.36vw), 1.25rem);
+  line-height: 1.7;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--Desaturated-Red);
+  font-weight: 400;
+  transition: 0.8s ease;
+}
+
+/* ************************ */
+/* FORM & BUTTON */
+/* ************************ */
+
+.form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--Desaturated-Red);
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: var(--Desaturated-Red);
+  transition: var(--Transition);
+}
+
+button {
+  background-image: url(../images/icon-arrow.svg),
+    linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 26px 40px;
+  position: absolute;
+  border-radius: 30px;
+  right: 0%;
+  top: -2%;
+  transition: var(--Transition);
+  cursor: pointer;
+  box-shadow: 0px 0px 19px 0px hsl(0, 36%, 70%);
+}
+
+button:is(:hover, :focus-visible) {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  outline: var(--Soft-Red);
+}
+
+/* ************************ */
+/* INPUT */
+/* ************************ */
+
+input[type="email"]:is(:hover, :focus-visible) {
+  outline: none;
+  border: 2px solid var(--Desaturated-Red);
+}
+
+input[type="email"] + span {
+  opacity: 0;
+  transform: translateY(10px);
+  color: crimson;
+  margin-left: 24px;
+}
+
+input[type="email"]:invalid + span {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+input[type="email"]:valid + span {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+input[type="email"]:invalid {
+  border: 2px solid crimson;
+  transition: border 0.3s ease;
+}
+
+/* ************************ */
+/* MEDIA QUERIES */
+/* ************************ */
+
+@media (min-width: 23.4375rem) {
+  .logo {
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+@media (min-width: 56.25rem) {
+  main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 2;
+    padding: 40px;
+  }
+
+  .main-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    padding: 40px 40px 40px 100px;
+  }
+
+  .form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+  }
+
+  picture {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .main-heading {
+    text-align: start;
+    padding: 50px 0;
+  }
+
+  .main-heading span {
+    font-weight: 500;
+    color: #333;
+  }
+
+  .main-paragraph {
+    text-align: start;
+    margin-bottom: 50px;
+  }
+
+  .input-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ************************ */
+/* ANIMATION */
+/* ************************ */
+
+.entrance-animation {
+  -webkit-animation: entrance-animation 1.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: entrance-animation 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes entrance-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes entrance-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
