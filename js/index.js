@@ -9,5 +9,7 @@ form.addEventListener("submit", (e) => {
   if (regEx.test(email.value)) {
     mainPage.classList.add("hide");
     document.getElementById("confirmation-container").removeAttribute("hidden");
+  } else {
   }
+  document.getElementById("error-message").style.opacity = "1";
 });

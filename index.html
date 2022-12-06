@@ -31,9 +31,17 @@
               class="email"
               placeholder="Email Address"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              autocomplete="email"
             />
-            <span class="error-message">Enter a valid email</span>
-            <button type="submit" class="submit" id="submit"></button>
+            <span class="error-message" id="error-message"
+              >Enter a valid email</span
+            >
+            <button
+              type="submit"
+              class="submit"
+              id="submit"
+              aria-label="submit"
+            ></button>
           </form>
         </div>
         <div aria-live="polite">
