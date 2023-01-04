@@ -28,14 +28,16 @@
               type="email"
               name="email"
               id="email"
+              aria-desciribedby="error-message-container"
               class="email"
               placeholder="Email Address"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               autocomplete="email"
             />
+            <div id="error-message-container" aria-live="polite">
             <span class="error-message" id="error-message"
-              >Enter a valid email</span
-            >
+              >Enter a valid email</span>
+            </div>
             <button
               type="submit"
               class="submit"
